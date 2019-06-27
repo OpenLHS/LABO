@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/pdro.owl" uri="Imports/PDRO_merged.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/fabp1701/ontologies/2019/5/untitled-ontology-139" uri="Imports/PDRO_merged.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/pdro.owl" uri="Imports/PDRO.owl"/>
     <uri id="Imports Wizard Entry" name="https://github.com/OGMS/ogms/releases/tag/v2019-04-30" uri="http://purl.obolibrary.org/obo/ogms.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/obi/2019-06-05/obi.owl" uri="http://purl.obolibrary.org/obo/obi.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/iao/2019-06-07/iao.owl" uri="http://purl.obolibrary.org/obo/iao.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/labo.owl" uri="LABO.owl"/>
-    <uri id="local reference" name="http://ontofox.hegroup.org/occupiestemporalregion.owl" uri="../_libs/occupiestemporalregion.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/ogms.owl" uri="../_libs/ogms.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/bfo.owl" uri="../_libs/bfo.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="../_libs/bfo.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/dron/dron-upper.owl" uri="../_libs/dron-upper.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/iao.owl" uri="../_libs/iao.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/iao/2015-02-23/iao.owl" uri="../_libs/iao.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/iao/2017-03-24/iao.owl" uri="../_libs/iao.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/iao/pno/bfo2/pno.owl" uri="../_libs/pno.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/obi.owl" uri="../_libs/obi.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/obi/2018-05-23/obi.owl" uri="../_libs/obi.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/omrse.owl" uri="../_libs/omrse.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/ontoneo/ontoneo.owl" uri="../_libs/ontoneo.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/vo.owl" uri="../_libs/vo.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/pdro-p3.owl" uri="../PDRO/pdro-p3.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/pdro.owl" uri="../PDRO/pdro.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/demo.owl" uri="../DEMO/DEMO.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/demo-p3.owl" uri="../DEMO/DEMO-P3.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/hado.owl" uri="../HADO/HADO.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/hado-qc-p3.owl" uri="../HADO/HADO-QC-P3.owl"/>
-    <uri id="local reference" name="http://purl.obolibrary.org/obo/hado-qc.owl" uri="../HADO/HADO-QC.owl"/>
 </catalog>

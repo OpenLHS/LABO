@@ -16,6 +16,7 @@ Prefix(ncbitaxon:=<http://purl.obolibrary.org/obo/ncbitaxon#>)
 
 Ontology(<http://purl.obolibrary.org/obo/labo.owl>
 <http://purl.obolibrary.org/obo/labo.owl>
+Import(<http://purl.obolibrary.org/obo/pdro.owl>)
 Import(<http://purl.obolibrary.org/obo/iao/2019-06-07/iao.owl>)
 Import(<http://purl.obolibrary.org/obo/obi/2019-06-05/obi.owl>)
 Import(<https://github.com/OGMS/ogms/releases/tag/v2019-04-30>)
@@ -23,7 +24,6 @@ Annotation(dc:creator "Adrien Barton")
 Annotation(dc:creator "Jean-François Ethier")
 Annotation(dc:creator "Paul Fabry")
 Annotation(rdfs:comment "An ontology of laboratory test specifications"@en)
-Annotation(rdfs:comment "Dernier ID: LABO_0000154")
 Annotation(rdfs:comment "Une ontologie de spécification de laboratoire"@fr)
 
 Declaration(Class(obo:HADO_0000004))
@@ -762,7 +762,7 @@ AnnotationAssertion(griis:GRIIS_comment obo:OGMS_0000056 "The output is not alwa
 AnnotationAssertion(obo:IAO_0000600 obo:OGMS_0000056 "A completed laboratory result might have as output several laboratory results such as a first nonvalidated result directly from the machine 'serum sodium 140 mmol/L' followed by a second validated result 'serum sodium 140 mmol/L'."@en)
 EquivalentClasses(obo:OGMS_0000056 ObjectIntersectionOf(obo:LABO_0000107 ObjectSomeValuesFrom(obo:OBI_0000299 obo:LABO_0000109)))
 
-# Class: obo:PDRO_0000129 (obo:PDRO_0000129)
+# Class: obo:PDRO_0000129 (condition)
 
 SubClassOf(obo:PDRO_0000129 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000124))
 
@@ -777,10 +777,10 @@ We suggest renaming this entity \"lab report normal value\", as \"normal values\
 
 It seems that \"normal value\" should be classified under \"value specification\"."@en)
 AnnotationAssertion(griis:GRIIS_comment obo:PDRO_0000117 "To be changed using value specifications."@en)
-AnnotationAssertion(owl:qualifiedCardinality _:genid1 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid3 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid4 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid5 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid6 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid10743 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid10744 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid10745 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid10746 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid10747 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid10748 "1"^^xsd:nonNegativeInteger)
 )
