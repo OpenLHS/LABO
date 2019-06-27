@@ -1,2 +1,2 @@
 LABO
-An ontology of laboratory prescription and documentation.
+An ontology of informational entities about laboratory test prescriptions and reporting.
