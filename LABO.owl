@@ -30,14 +30,7 @@ Declaration(Class(obo:HADO_0000004))
 Declaration(Class(obo:HADO_0000006))
 Declaration(Class(obo:LABO_0000004))
 Declaration(Class(obo:LABO_0000005))
-Declaration(Class(obo:LABO_0000006))
-Declaration(Class(obo:LABO_0000007))
 Declaration(Class(obo:LABO_0000008))
-Declaration(Class(obo:LABO_0000009))
-Declaration(Class(obo:LABO_0000010))
-Declaration(Class(obo:LABO_0000011))
-Declaration(Class(obo:LABO_0000012))
-Declaration(Class(obo:LABO_0000013))
 Declaration(Class(obo:LABO_0000017))
 Declaration(Class(obo:LABO_0000018))
 Declaration(Class(obo:LABO_0000019))
@@ -173,26 +166,6 @@ AnnotationAssertion(rdfs:label obo:LABO_0000005 "laboratory test specimen type s
 AnnotationAssertion(rdfs:label obo:LABO_0000005 "spécification de type d'échantillon"@fr)
 SubClassOf(obo:LABO_0000005 obo:IAO_0000030)
 
-# Class: obo:LABO_0000006 (résultat d'hématocrite)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000006 "A measurement datum specifying how much of a person's blood is made of red blood cells."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000006 "Une mesure qui spécifie quelle portion du sang d'une personne est composée de cellules rouges."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000006 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=hemoglobin"@en)
-AnnotationAssertion(rdfs:comment obo:LABO_0000006 "This measurement datum is a volume/volume measure which compares the volume of hemoglobin in one's blood to the total volume of blood in one's body."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000006 "hematocrit result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000006 "résultat d'hématocrite"@fr)
-SubClassOf(obo:LABO_0000006 obo:IAO_0000109)
-
-# Class: obo:LABO_0000007 (résultat de test d'hémoglobine)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000007 "A measurement datum which specifies the amount of hemoglobin in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000007 "Une mesure qui spécifie la quantité d'hémoglobine dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000007 "https://www.mayoclinic.org/tests-procedures/hemoglobin-test/about/pac-20385075"@en)
-AnnotationAssertion(rdfs:comment obo:LABO_0000007 "This measurement datum is a mass/volume measure which compares the mass of hemoglobin in one's blood to the total volume of blood in one's body."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000007 "hemoglobin test result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000007 "résultat de test d'hémoglobine"@fr)
-SubClassOf(obo:LABO_0000007 obo:IAO_0000109)
-
 # Class: obo:LABO_0000008 (spécification de méthode échantillonnage)
 
 AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000008 "A data item intended to be a truthful statement about the sampling method used to extract a sample from an entity."@en)
@@ -200,51 +173,6 @@ AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000008 "Une donnée supposée êtr
 AnnotationAssertion(rdfs:label obo:LABO_0000008 "sampling method specification"@en)
 AnnotationAssertion(rdfs:label obo:LABO_0000008 "spécification de méthode échantillonnage"@fr)
 SubClassOf(obo:LABO_0000008 obo:IAO_0000030)
-
-# Class: obo:LABO_0000009 (résultat de volume corpusculaire moyen)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000009 "A measurement datum specifying the average size of a person's red blood cells."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000009 "Une mesure qui spécifie la taille moyenne des cellules rouges d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000009 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=complete_blood_count"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000009 "mean corpuscular volume result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000009 "résultat de volume corpusculaire moyen"@fr)
-SubClassOf(obo:LABO_0000009 obo:IAO_0000109)
-
-# Class: obo:LABO_0000010 (résultat de volume moyen des plaquettes)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000010 "A measurement datum specifying the average size of the platetels in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000010 "Une mesure qui spécifie la taille moyenne des plaquette du sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000010 "https://en.wikipedia.org/wiki/Mean_platelet_volume"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000010 "mean platelet volume result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000010 "résultat de volume moyen des plaquettes"@fr)
-SubClassOf(obo:LABO_0000010 obo:IAO_0000109)
-
-# Class: obo:LABO_0000011 (platelets count result)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000011 "A measurement datum which specifies the number of platelet cells in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000011 "Une mesure qui spécifie le nombre de plaquettes dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000011 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=platelet_count"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000011 "platelets count result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000011 "résultat de dénombrement de plaquettes"@fr)
-SubClassOf(obo:LABO_0000011 obo:IAO_0000109)
-
-# Class: obo:LABO_0000012 (résultat de dénombrement de cellules rouges)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000012 "A measurement datum which specifies the number of red blood cell in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000012 "Une mesure qui spécifie le nombre de cellules rouges dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000012 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=red_blood_cell_Count"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000012 "red blood cell count result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000012 "résultat de dénombrement de cellules rouges"@fr)
-SubClassOf(obo:LABO_0000012 obo:IAO_0000109)
-
-# Class: obo:LABO_0000013 (résultat de variation de taille des cellules rouges)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000013 "A measurement datum which specifies the range of variation of the size of red blood cell in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000013 "Une mesure qui spécifie l'étendue de la variation de la taille des cellules rouges dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000013 "https://en.wikipedia.org/wiki/Red_blood_cell_distribution_width"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000013 "red cell distribution width result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000013 "résultat de variation de taille des cellules rouges"@fr)
-SubClassOf(obo:LABO_0000013 obo:IAO_0000109)
 
 # Class: obo:LABO_0000017 (information de compte-rendu de test de laboratoire)
 
@@ -777,10 +705,10 @@ We suggest renaming this entity \"lab report normal value\", as \"normal values\
 
 It seems that \"normal value\" should be classified under \"value specification\"."@en)
 AnnotationAssertion(griis:GRIIS_comment obo:PDRO_0000117 "To be changed using value specifications."@en)
-AnnotationAssertion(owl:qualifiedCardinality _:genid10743 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid10744 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid10745 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid10746 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid10747 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid10748 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid33099 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid33100 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid33101 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid33102 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid33103 "1"^^xsd:nonNegativeInteger)
+AnnotationAssertion(owl:qualifiedCardinality _:genid33104 "1"^^xsd:nonNegativeInteger)
 )
