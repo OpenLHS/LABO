@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/pdro.owl" uri="src/ontology/PDRO_merged.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/pdro.owl" uri="Imports/PDRO_merged.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/fabp1701/ontologies/2019/5/untitled-ontology-139" uri="Imports/PDRO_merged.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/pdro.owl" uri="Imports/PDRO.owl"/>

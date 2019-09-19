@@ -16,15 +16,15 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/labo.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/labo/2019-08-29/labo.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/labo/2019-09-19/labo.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/2019-06-07/iao.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/2019-06-05/obi.owl"/>
         <owl:imports rdf:resource="https://github.com/OGMS/ogms/releases/tag/v2019-04-30"/>
-        <rdfs:comment xml:lang="fr">Une ontologie de spécification de laboratoire</rdfs:comment>
+        <rdfs:comment xml:lang="en">LABO is an ontology of informational entities describing clinical laboratory tests prescriptions and reporting documents.</rdfs:comment>
         <dc:creator>Jean-François Ethier</dc:creator>
+        <dc:license xml:lang="en">http://creativecommons.org/licenses/by/4.0/</dc:license>
+        <rdfs:comment xml:lang="fr">LABO est une ontologie des entités informationnelles décrivant les prescriptions d&apos;examens de laboratoire et les documents rapportant les résultats.</rdfs:comment>
         <dc:creator>Paul Fabry</dc:creator>
-        <rdfs:comment xml:lang="en">An ontology of laboratory test specifications</rdfs:comment>
         <dc:creator>Adrien Barton</dc:creator>
     </owl:Ontology>
     
