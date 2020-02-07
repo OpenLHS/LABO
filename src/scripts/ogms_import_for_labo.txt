@@ -1,0 +1,4 @@
+http://purl.obolibrary.org/obo/OGMS_0000014
+http://purl.obolibrary.org/obo/OGMS_0000018
+http://purl.obolibrary.org/obo/OGMS_0000056
+http://purl.obolibrary.org/obo/OGMS_0000108

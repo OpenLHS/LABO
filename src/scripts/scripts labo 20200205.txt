@@ -1,0 +1,33 @@
+LABO scripts for ROBOT
+
+	- IAO import
+	
+robot extract --method BOT --input "TARGET_FOLDER\IAO\src\ontology\iao-edit.owl" --term-file iao_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\iao_for_labo.owl
+
+	- HADO import
+	
+robot extract --method BOT --input "C:\Depot_GitLab\ontologies\HADO\src\hado.owl" --term-file hado_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\hado_for_labo.owl
+
+	- PDRO import
+	
+robot extract --method BOT --input "C:\Depot_GitLab\ontologies\PDRO\src\pdro.owl" --term-file pdro_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\pdro_for_labo.owl
+
+	- OBI import
+	
+robot extract --method BOT --input "TARGET_FOLDER\obi\src\ontology\obi-edit.owl" --term-file obi_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\obi_for_labo.owl
+
+	- OGMS import
+	
+robot extract --method BOT --input "TARGET_FOLDER\ogms\src\ontology\ogms.owl" --term-file ogms_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\ogms_for_labo.owl
+
+	- OPMI import
+
+robot extract --method BOT --input "TARGET_FOLDER\opmi\src\ontology\opmi.owl" --term-file opmi_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\opmi_for_labo.owl
+
+	- OMIABIS import
+
+robot extract --method BOT --input "TARGET_FOLDER\omiabis-dev\BFO2 omiabis\omiabis.owl" --term-file omiabis_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\omiabis_for_labo.owl
+
+	- LABO merge
+
+robot merge --input ..\labo.owl --output ..\..\merged\labo-merged.owl

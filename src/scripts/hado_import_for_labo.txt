@@ -1,0 +1,2 @@
+http://purl.obolibrary.org/obo/HADO_0000004
+http://purl.obolibrary.org/obo/HADO_0000006
