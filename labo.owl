@@ -1,826 +1,1977 @@
-Prefix(:=<http://purl.obolibrary.org/obo/labo.owl#>)
-Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
-Prefix(obo:=<http://purl.obolibrary.org/obo/>)
-Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
-Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
-Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
-Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
-Prefix(foaf:=<http://xmlns.com/foaf/0.1/>)
-Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-Prefix(griis:=<http://griis.ca/>)
-Prefix(terms:=<http://purl.org/dc/terms/>)
-Prefix(protege:=<http://protege.stanford.edu/plugins/owl/protege#>)
-Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
-Prefix(ncbitaxon:=<http://purl.obolibrary.org/obo/ncbitaxon#>)
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/labo.owl#"
+     xml:base="http://purl.obolibrary.org/obo/labo.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:griis="http://griis.ca/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/labo.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/2020-02-06/labo.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/hado.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/opmi.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/pdro.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/iao-edit.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/obi_core.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/omiabis/dev/omiabis.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ro/core-subset.owl"/>
+        <dc:creator>Adrien Barton</dc:creator>
+        <dc:creator>Jean-François Ethier</dc:creator>
+        <dc:creator>Paul Fabry</dc:creator>
+        <rdfs:comment xml:lang="en">An ontology of laboratory test specifications</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une ontologie de spécification de laboratoire</rdfs:comment>
+    </owl:Ontology>
+    
 
 
-Ontology(<http://purl.obolibrary.org/obo/labo.owl>
-<http://purl.obolibrary.org/obo/2020-02-06/labo.owl>
-Import(<http://purl.obolibrary.org/obo/hado.owl>)
-Import(<http://purl.obolibrary.org/obo/ogms.owl>)
-Import(<http://purl.obolibrary.org/obo/opmi.owl>)
-Import(<http://purl.obolibrary.org/obo/pdro.owl>)
-Import(<http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl>)
-Import(<http://purl.obolibrary.org/obo/iao/iao-edit.owl>)
-Import(<http://purl.obolibrary.org/obo/obi/obi_core.owl>)
-Import(<http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl>)
-Import(<http://purl.obolibrary.org/obo/omiabis/dev/omiabis.owl>)
-Import(<http://purl.obolibrary.org/obo/ro/core-subset.owl>)
-Annotation(dc:creator "Adrien Barton")
-Annotation(dc:creator "Jean-François Ethier")
-Annotation(dc:creator "Paul Fabry")
-Annotation(rdfs:comment "An ontology of laboratory test specifications"@en)
-Annotation(rdfs:comment "Une ontologie de spécification de laboratoire"@fr)
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-Declaration(Class(obo:BFO_0000001))
-Declaration(Class(obo:BFO_0000031))
-Declaration(Class(obo:HADO_0000004))
-Declaration(Class(obo:HADO_0000006))
-Declaration(Class(obo:IAO_0000003))
-Declaration(Class(obo:IAO_0000005))
-Declaration(Class(obo:IAO_0000007))
-Declaration(Class(obo:IAO_0000027))
-Declaration(Class(obo:IAO_0000030))
-Declaration(Class(obo:IAO_0000033))
-Declaration(Class(obo:IAO_0000104))
-Declaration(Class(obo:IAO_0000109))
-Declaration(Class(obo:IAO_0000300))
-Declaration(Class(obo:IAO_0000310))
-Declaration(Class(obo:IAO_0000578))
-Declaration(Class(obo:LABO_0000004))
-Declaration(Class(obo:LABO_0000005))
-Declaration(Class(obo:LABO_0000006))
-Declaration(Class(obo:LABO_0000007))
-Declaration(Class(obo:LABO_0000008))
-Declaration(Class(obo:LABO_0000009))
-Declaration(Class(obo:LABO_0000010))
-Declaration(Class(obo:LABO_0000011))
-Declaration(Class(obo:LABO_0000012))
-Declaration(Class(obo:LABO_0000013))
-Declaration(Class(obo:LABO_0000017))
-Declaration(Class(obo:LABO_0000018))
-Declaration(Class(obo:LABO_0000019))
-Declaration(Class(obo:LABO_0000020))
-Declaration(Class(obo:LABO_0000021))
-Declaration(Class(obo:LABO_0000023))
-Declaration(Class(obo:LABO_0000100))
-Declaration(Class(obo:LABO_0000101))
-Declaration(Class(obo:LABO_0000102))
-Declaration(Class(obo:LABO_0000103))
-Declaration(Class(obo:LABO_0000104))
-Declaration(Class(obo:LABO_0000105))
-Declaration(Class(obo:LABO_0000106))
-Declaration(Class(obo:LABO_0000107))
-Declaration(Class(obo:LABO_0000108))
-Declaration(Class(obo:LABO_0000109))
-Declaration(Class(obo:LABO_0000110))
-Declaration(Class(obo:LABO_0000111))
-Declaration(Class(obo:LABO_0000112))
-Declaration(Class(obo:LABO_0000113))
-Declaration(Class(obo:LABO_0000114))
-Declaration(Class(obo:LABO_0000117))
-Declaration(Class(obo:LABO_0000120))
-Declaration(Class(obo:LABO_0000121))
-Declaration(Class(obo:LABO_0000122))
-Declaration(Class(obo:LABO_0000123))
-Declaration(Class(obo:LABO_0000124))
-Declaration(Class(obo:LABO_0000129))
-Declaration(Class(obo:LABO_0000130))
-Declaration(Class(obo:LABO_0000131))
-Declaration(Class(obo:LABO_0000132))
-Declaration(Class(obo:LABO_0000133))
-Declaration(Class(obo:LABO_0000134))
-Declaration(Class(obo:LABO_0000135))
-Declaration(Class(obo:LABO_0000136))
-Declaration(Class(obo:LABO_0000137))
-Declaration(Class(obo:LABO_0000138))
-Declaration(Class(obo:LABO_0000139))
-Declaration(Class(obo:LABO_0000140))
-Declaration(Class(obo:LABO_0000141))
-Declaration(Class(obo:LABO_0000142))
-Declaration(Class(obo:LABO_0000143))
-Declaration(Class(obo:LABO_0000144))
-Declaration(Class(obo:LABO_0000145))
-Declaration(Class(obo:LABO_0000146))
-Declaration(Class(obo:LABO_0000149))
-Declaration(Class(obo:LABO_0000150))
-Declaration(Class(obo:LABO_0000152))
-Declaration(Class(obo:LABO_0000153))
-Declaration(Class(obo:LABO_0000154))
-Declaration(Class(obo:LABO_0000155))
-Declaration(Class(obo:LABO_0000160))
-Declaration(Class(obo:LABO_0000161))
-Declaration(Class(obo:LABO_0000162))
-Declaration(Class(obo:LABO_0000170))
-Declaration(Class(obo:LABO_0000171))
-Declaration(Class(obo:LABO_0000172))
-Declaration(Class(obo:LABO_0000173))
-Declaration(Class(obo:LABO_0000174))
-Declaration(Class(obo:LABO_0000175))
-Declaration(Class(obo:LABO_0000176))
-Declaration(Class(obo:LABO_0000177))
-Declaration(Class(obo:LABO_0000178))
-Declaration(Class(obo:LABO_0000179))
-Declaration(Class(obo:LABO_0000181))
-Declaration(Class(obo:OBI_0000011))
-Declaration(Class(obo:OBI_0001616))
-Declaration(Class(obo:OBI_0001931))
-Declaration(Class(obo:OBI_0001933))
-Declaration(Class(obo:OBI_0100051))
-Declaration(Class(obo:OGMS_0000014))
-Declaration(Class(obo:OGMS_0000018))
-Declaration(Class(obo:OGMS_0000056))
-Declaration(Class(obo:OGMS_0000108))
-Declaration(Class(obo:PDRO_0000001))
-Declaration(Class(obo:PDRO_0000129))
-Declaration(Class(obo:PDRO_0010010))
-Declaration(ObjectProperty(obo:BFO_0000050))
-Declaration(ObjectProperty(obo:BFO_0000051))
-Declaration(ObjectProperty(obo:IAO_0000136))
-Declaration(ObjectProperty(obo:IAO_0000219))
-Declaration(ObjectProperty(obo:LABO_0000115))
-Declaration(ObjectProperty(obo:LABO_0000116))
-Declaration(ObjectProperty(obo:LABO_0000118))
-Declaration(ObjectProperty(obo:LABO_0000119))
-Declaration(ObjectProperty(obo:LABO_0000148))
-Declaration(ObjectProperty(obo:OBI_0000293))
-Declaration(ObjectProperty(obo:OBI_0000299))
-Declaration(ObjectProperty(obo:OBI_0000312))
-Declaration(ObjectProperty(obo:OBI_0001938))
-Declaration(DataProperty(obo:OBI_0001937))
-Declaration(AnnotationProperty(griis:GRIIS_comment))
-Declaration(AnnotationProperty(obo:IAO_0000112))
-Declaration(AnnotationProperty(obo:IAO_0000115))
-Declaration(AnnotationProperty(obo:IAO_0000119))
-Declaration(AnnotationProperty(obo:IAO_0000600))
-Declaration(AnnotationProperty(dc:creator))
-Declaration(AnnotationProperty(owl:qualifiedCardinality))
-
-############################
-#   Object Properties
-############################
-
-# Object Property: obo:LABO_0000115 (directed by)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000115 "The inverse relationship of directs.")
-AnnotationAssertion(rdfs:label obo:LABO_0000115 "directed by"@en)
-InverseObjectProperties(obo:LABO_0000115 obo:LABO_0000116)
-
-# Object Property: obo:LABO_0000116 (directs)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000116 "The relationship between a directive information entity and the process it directs.")
-AnnotationAssertion(rdfs:label obo:LABO_0000116 "directs"@en)
-
-# Object Property: obo:LABO_0000118 (has minimal value)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000118 "has minimal value"@en)
-SubObjectPropertyOf(obo:LABO_0000118 obo:BFO_0000051)
-
-# Object Property: obo:LABO_0000119 (has maximal value)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000119 "has maximal value"@en)
-SubObjectPropertyOf(obo:LABO_0000119 obo:BFO_0000051)
-
-# Object Property: obo:LABO_0000148 (x)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000148 "x"@fr)
-ObjectPropertyDomain(obo:LABO_0000148 obo:OBI_0000011)
+    
 
 
+    <!-- http://griis.ca/GRIIS_comment -->
+
+    <owl:AnnotationProperty rdf:about="http://griis.ca/GRIIS_comment"/>
+    
 
 
-############################
-#   Classes
-############################
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
 
-# Class: obo:LABO_0000004 (laboratory test specimen ID)
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
+    
 
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000004 "'accession-id #150' in 'accession-id #150 whole blood 3 ml'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000004 "A centrally registered identifier that denotes a particular specimen on which a laboratory test is intended to be executed or has already been executed."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000004 "TODO"@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000004 "identification d'échantillon d'examen de laboratoire"@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000004 "laboratory test specimen ID"@en)
-AnnotationAssertion(owl:deprecated obo:LABO_0000004 ""@en)
-SubClassOf(obo:LABO_0000004 obo:IAO_0000578)
-SubClassOf(obo:LABO_0000004 ObjectExactCardinality(1 obo:BFO_0000051 obo:OBI_0001616))
 
-# Class: obo:LABO_0000005 (spécification de type d'échantillon)
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000005 "'whole blood' in 'accession-id #150 whole blood 3 ml'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000005 "An information content entity about the type of the specimen to be used for some laboratory tests."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000005 "Une donnée qui est supposée être une proposition vraie à propos du type de l'échantillon pour lequel des tests ont été prescrits."@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000005 "laboratory test specimen type specification"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000005 "spécification de type d'échantillon"@fr)
-SubClassOf(obo:LABO_0000005 obo:IAO_0000030)
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
 
-# Class: obo:LABO_0000006 (résultat d'hématocrite)
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000006 "A measurement datum specifying how much of a person's blood is made of red blood cells."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000006 "Une mesure qui spécifie quelle portion du sang d'une personne est composée de cellules rouges."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000006 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=hemoglobin"@en)
-AnnotationAssertion(rdfs:comment obo:LABO_0000006 "This measurement datum is a volume/volume measure which compares the volume of hemoglobin in one's blood to the total volume of blood in one's body."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000006 "hematocrit result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000006 "résultat d'hématocrite"@fr)
-SubClassOf(obo:LABO_0000006 obo:IAO_0000109)
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
 
-# Class: obo:LABO_0000007 (résultat de test d'hémoglobine)
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000007 "A measurement datum which specifies the amount of hemoglobin in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000007 "Une mesure qui spécifie la quantité d'hémoglobine dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000007 "https://www.mayoclinic.org/tests-procedures/hemoglobin-test/about/pac-20385075"@en)
-AnnotationAssertion(rdfs:comment obo:LABO_0000007 "This measurement datum is a mass/volume measure which compares the mass of hemoglobin in one's blood to the total volume of blood in one's body."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000007 "hemoglobin test result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000007 "résultat de test d'hémoglobine"@fr)
-SubClassOf(obo:LABO_0000007 obo:IAO_0000109)
 
-# Class: obo:LABO_0000008 (spécification de méthode échantillonnage)
+    <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000008 "A data item intended to be a truthful statement about the sampling method used to extract a sample from an entity."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000008 "Une donnée supposée être une proposition vraie à propos de la méthode d'échantillonnage utilisée pour extraire un échantillon particulier d'une entité."@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000008 "sampling method specification"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000008 "spécification de méthode échantillonnage"@fr)
-SubClassOf(obo:LABO_0000008 obo:IAO_0000030)
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
+    
 
-# Class: obo:LABO_0000009 (résultat de volume corpusculaire moyen)
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000009 "A measurement datum specifying the average size of a person's red blood cells."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000009 "Une mesure qui spécifie la taille moyenne des cellules rouges d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000009 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=complete_blood_count"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000009 "mean corpuscular volume result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000009 "résultat de volume corpusculaire moyen"@fr)
-SubClassOf(obo:LABO_0000009 obo:IAO_0000109)
+    <!-- http://purl.org/dc/elements/1.1/creator -->
 
-# Class: obo:LABO_0000010 (résultat de volume moyen des plaquettes)
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000010 "A measurement datum specifying the average size of the platetels in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000010 "Une mesure qui spécifie la taille moyenne des plaquette du sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000010 "https://en.wikipedia.org/wiki/Mean_platelet_volume"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000010 "mean platelet volume result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000010 "résultat de volume moyen des plaquettes"@fr)
-SubClassOf(obo:LABO_0000010 obo:IAO_0000109)
 
-# Class: obo:LABO_0000011 (platelets count result)
+    <!-- http://www.w3.org/2002/07/owl#qualifiedCardinality -->
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000011 "A measurement datum which specifies the number of platelet cells in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000011 "Une mesure qui spécifie le nombre de plaquettes dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000011 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=platelet_count"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000011 "platelets count result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000011 "résultat de dénombrement de plaquettes"@fr)
-SubClassOf(obo:LABO_0000011 obo:IAO_0000109)
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#qualifiedCardinality"/>
+    
 
-# Class: obo:LABO_0000012 (résultat de dénombrement de cellules rouges)
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000012 "A measurement datum which specifies the number of red blood cell in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000012 "Une mesure qui spécifie le nombre de cellules rouges dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000012 "https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&contentid=red_blood_cell_Count"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000012 "red blood cell count result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000012 "résultat de dénombrement de cellules rouges"@fr)
-SubClassOf(obo:LABO_0000012 obo:IAO_0000109)
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-# Class: obo:LABO_0000013 (résultat de variation de taille des cellules rouges)
+    
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000013 "A measurement datum which specifies the range of variation of the size of red blood cell in a person's blood."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000013 "Une mesure qui spécifie l'étendue de la variation de la taille des cellules rouges dans le sang d'une personne."@fr)
-AnnotationAssertion(obo:IAO_0000119 obo:LABO_0000013 "https://en.wikipedia.org/wiki/Red_blood_cell_distribution_width"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000013 "red cell distribution width result"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000013 "résultat de variation de taille des cellules rouges"@fr)
-SubClassOf(obo:LABO_0000013 obo:IAO_0000109)
 
-# Class: obo:LABO_0000017 (information de compte-rendu de test de laboratoire)
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000017 "An information content entity that encompasses all relevant information pertaining to a given laboratory test prescription."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000017 "TODO"@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000017 "information de compte-rendu de test de laboratoire"@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000017 "prescribed laboratory test complete reporting information"@en)
-SubClassOf(obo:LABO_0000017 obo:IAO_0000030)
-SubClassOf(obo:LABO_0000017 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000021))
-SubClassOf(obo:LABO_0000017 ObjectSomeValuesFrom(obo:IAO_0000136 ObjectIntersectionOf(obo:LABO_0000107 ObjectSomeValuesFrom(obo:LABO_0000115 ObjectIntersectionOf(obo:LABO_0000105 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000018))))))
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+    
 
-# Class: obo:LABO_0000018 (laboratory test prescription)
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000018 "A health care prescription specifying the realization of one or several laboratory test(s)."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000018 "laboratory test prescription"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000018 "prescription de test de laboratoire"@fr)
-SubClassOf(obo:LABO_0000018 obo:PDRO_0000001)
-SubClassOf(obo:LABO_0000018 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000124))
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
 
-# Class: obo:LABO_0000019 (laboratory test reporting information)
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+    
 
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000019 "An information content entity which reports on some aspect of a particular laboratory test."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000019 "Une entité de contenu informationnel qui documente un ou plusieurs aspects d'un certain test de laboratoire."@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000019 "information de résultat pour un test de laboratoire (WIP)"@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000019 "laboratory test reporting information"@en)
-SubClassOf(obo:LABO_0000019 obo:IAO_0000030)
 
-# Class: obo:LABO_0000020 (laboratory test result item)
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
 
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000020 "'serum sodium 140 mmol/L, 2018/08/14'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000020 "(à revoir) Une partie d'un document d'analyse de laboratoire qui spécifie le résultat d'un test spécifique qui a été soit prescrit par une prescription de test de laboratoire, soit réalisé comme conséquence d'une prescription de test de laboratoire."@fr)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000020 "A laboratory test reporting item that includes the result of the laboratory test."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000020 "laboratory test result item"@en)
-EquivalentClasses(obo:LABO_0000020 ObjectIntersectionOf(obo:LABO_0000100 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000109)))
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    
 
-# Class: obo:LABO_0000021 (groupement de résultats pour un test de laboratoire)
 
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000021 "Example 1:
-'CBC:
+    <!-- http://purl.obolibrary.org/obo/IAO_0000219 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000115 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/LABO_0000115">
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000116"/>
+        <obo:IAO_0000115>The inverse relationship of directs.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">directed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000116 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/LABO_0000116">
+        <obo:IAO_0000115>The relationship between a directive information entity and the process it directs.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">directs</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000118 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/LABO_0000118">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <rdfs:label xml:lang="en">has minimal value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000119 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/LABO_0000119">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <rdfs:label xml:lang="en">has maximal value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000148 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/LABO_0000148">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000312"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000293"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label xml:lang="fr">x</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001938 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001938"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001937 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001937"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HADO_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HADO_0000004"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HADO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HADO_0000006"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000003"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000005"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000007"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000033 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000033"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000109 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000109"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000300"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000310 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000578 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000578"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0001616"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;accession-id #150&apos; in &apos;accession-id #150 whole blood 3 ml&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A centrally registered identifier that denotes a particular specimen on which a laboratory test is intended to be executed or has already been executed.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">TODO</obo:IAO_0000115>
+        <rdfs:label xml:lang="fr">identification d&apos;échantillon d&apos;examen de laboratoire</rdfs:label>
+        <rdfs:label xml:lang="en">laboratory test specimen ID</rdfs:label>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;whole blood&apos; in &apos;accession-id #150 whole blood 3 ml&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An information content entity about the type of the specimen to be used for some laboratory tests.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une donnée qui est supposée être une proposition vraie à propos du type de l&apos;échantillon pour lequel des tests ont été prescrits.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test specimen type specification</rdfs:label>
+        <rdfs:label xml:lang="fr">spécification de type d&apos;échantillon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum specifying how much of a person&apos;s blood is made of red blood cells.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie quelle portion du sang d&apos;une personne est composée de cellules rouges.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&amp;contentid=hemoglobin</obo:IAO_0000119>
+        <rdfs:comment xml:lang="en">This measurement datum is a volume/volume measure which compares the volume of hemoglobin in one&apos;s blood to the total volume of blood in one&apos;s body.</rdfs:comment>
+        <rdfs:label xml:lang="en">hematocrit result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat d&apos;hématocrite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum which specifies the amount of hemoglobin in a person&apos;s blood.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie la quantité d&apos;hémoglobine dans le sang d&apos;une personne.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://www.mayoclinic.org/tests-procedures/hemoglobin-test/about/pac-20385075</obo:IAO_0000119>
+        <rdfs:comment xml:lang="en">This measurement datum is a mass/volume measure which compares the mass of hemoglobin in one&apos;s blood to the total volume of blood in one&apos;s body.</rdfs:comment>
+        <rdfs:label xml:lang="en">hemoglobin test result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat de test d&apos;hémoglobine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000115 xml:lang="en">A data item intended to be a truthful statement about the sampling method used to extract a sample from an entity.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une donnée supposée être une proposition vraie à propos de la méthode d&apos;échantillonnage utilisée pour extraire un échantillon particulier d&apos;une entité.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">sampling method specification</rdfs:label>
+        <rdfs:label xml:lang="fr">spécification de méthode échantillonnage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum specifying the average size of a person&apos;s red blood cells.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie la taille moyenne des cellules rouges d&apos;une personne.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&amp;contentid=complete_blood_count</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">mean corpuscular volume result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat de volume corpusculaire moyen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum specifying the average size of the platetels in a person&apos;s blood.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie la taille moyenne des plaquette du sang d&apos;une personne.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Mean_platelet_volume</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">mean platelet volume result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat de volume moyen des plaquettes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum which specifies the number of platelet cells in a person&apos;s blood.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie le nombre de plaquettes dans le sang d&apos;une personne.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&amp;contentid=platelet_count</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">platelets count result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat de dénombrement de plaquettes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000012 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000012">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum which specifies the number of red blood cell in a person&apos;s blood.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie le nombre de cellules rouges dans le sang d&apos;une personne.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=167&amp;contentid=red_blood_cell_Count</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">red blood cell count result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat de dénombrement de cellules rouges</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000013 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000013">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum which specifies the range of variation of the size of red blood cell in a person&apos;s blood.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une mesure qui spécifie l&apos;étendue de la variation de la taille des cellules rouges dans le sang d&apos;une personne.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Red_blood_cell_distribution_width</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">red cell distribution width result</rdfs:label>
+        <rdfs:label xml:lang="fr">résultat de variation de taille des cellules rouges</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000017">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000107"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/LABO_0000115"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000105"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000018"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that encompasses all relevant information pertaining to a given laboratory test prescription.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">TODO</obo:IAO_0000115>
+        <rdfs:label xml:lang="fr">information de compte-rendu de test de laboratoire</rdfs:label>
+        <rdfs:label xml:lang="en">prescribed laboratory test complete reporting information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PDRO_0000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000124"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A health care prescription specifying the realization of one or several laboratory test(s).</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test prescription</rdfs:label>
+        <rdfs:label xml:lang="fr">prescription de test de laboratoire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000019">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000115 xml:lang="en">An information content entity which reports on some aspect of a particular laboratory test.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une entité de contenu informationnel qui documente un ou plusieurs aspects d&apos;un certain test de laboratoire.</obo:IAO_0000115>
+        <rdfs:label xml:lang="fr">information de résultat pour un test de laboratoire (WIP)</rdfs:label>
+        <rdfs:label xml:lang="en">laboratory test reporting information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000020">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000100"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000112 xml:lang="en">&apos;serum sodium 140 mmol/L, 2018/08/14&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="fr">(à revoir) Une partie d&apos;un document d&apos;analyse de laboratoire qui spécifie le résultat d&apos;un test spécifique qui a été soit prescrit par une prescription de test de laboratoire, soit réalisé comme conséquence d&apos;une prescription de test de laboratoire.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test reporting item that includes the result of the laboratory test.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test result item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000021 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000021">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000105"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000104"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>Example 1:
+&apos;CBC:
 - WBC 12.1 10^9/L
 - RBC 5.2 10^12/L
-[...]'
+[...]&apos;
 in a report on tests directed by a complete blood count prescription.
 
 Example 2:
-'serum sodium in progress'")
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000021 "A laboratory test reporting information which reports on the test(s) directed by one laboratory test directive item."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000021 "Une partie d'un document d'analyse de laboratoire qui spécifie des résultats des tests."@fr)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000021 "A laboratory test reporting group does not necessarily provide the reporting information concerning a laboratory test directive item in a prescription - the directive item can also be specified e.g. in a research protocol.
-
-A laboratory test reporting group can, but doesn't have to, include a laboratory test reporting item, as in 'CBC in progress' (which is not a laboratory test reporting item, because it reports on several tests, not just one)."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000021 "groupement de résultats pour un test de laboratoire"@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000021 "laboratory test reporting group"@en)
-SubClassOf(obo:LABO_0000021 obo:LABO_0000019)
-SubClassOf(obo:LABO_0000021 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000105))
-SubClassOf(obo:LABO_0000021 ObjectSomeValuesFrom(obo:IAO_0000136 obo:LABO_0000104))
-
-# Class: obo:LABO_0000023 (valeur limite)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000023 "A value specification that is the the lower bound or the upper bound of a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000023 "bound"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000023 "valeur limite"@fr)
-SubClassOf(obo:LABO_0000023 obo:OBI_0001933)
-
-# Class: obo:LABO_0000100 (laboratory test reporting item)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000100 "'serum sodium in progress, 2018/07/25'
-'serum sodium 140 mmol/L, 2018/08/14'
-'blood group O, 2018/07/12 12:34 pm'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000100 "A laboratory test reporting information that is part of a laboratory test reporting group, that is about a laboratory test, and that mentions which characteristic of a specimen this test was supposed to assess, and a time at which this information was valid."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000100 "laboratory test reporting item"@en)
-SubClassOf(obo:LABO_0000100 obo:LABO_0000019)
-SubClassOf(obo:LABO_0000100 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000021))
-SubClassOf(obo:LABO_0000100 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000102))
-SubClassOf(obo:LABO_0000100 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000110))
-SubClassOf(obo:LABO_0000100 ObjectExactCardinality(1 obo:IAO_0000136 obo:LABO_0000107))
-
-# Class: obo:LABO_0000101 (laboratory test status specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000101 "'in progress' in 'FSC, in progress, 2018/07/25'
-'resulted' in 'blood group O, resulted, 2018/07/12 12:34 pm'
-'validated' in 'serum sodium 140 mmol/L, validated, 2018/07/28'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000101 "A laboratory test reporting information that specifies the status of a laboratory test or a group of laboratory tests."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000101 "laboratory test status specification"@en)
-SubClassOf(obo:LABO_0000101 obo:LABO_0000019)
-SubClassOf(obo:LABO_0000101 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000021))
-
-# Class: obo:LABO_0000102 (specimen characteristic specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000102 "'serum sodium concentration' in 'serum sodium concentration 140 mmol/L, validated, 2018/07/28'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000102 "An information content entity that specifies a particular characteristic of a specimen or a class of characteristics of specimens."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000102 "specimen characteristic specification"@en)
-SubClassOf(obo:LABO_0000102 obo:IAO_0000030)
-
-# Class: obo:LABO_0000103 (laboratory test report document)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000103 "A document reporting on a laboratory test."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000103 "laboratory test report document"@en)
-SubClassOf(obo:LABO_0000103 obo:IAO_0000310)
-SubClassOf(obo:LABO_0000103 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000021))
-SubClassOf(obo:LABO_0000103 ObjectSomeValuesFrom(obo:BFO_0000051 ObjectUnionOf(obo:HADO_0000004 obo:HADO_0000006)))
-
-# Class: obo:LABO_0000104 (directed laboratory test group)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000104 "All tests (white blood cells, red blood cells, etc.) realized when executing a prescription of CBC for John Smith on 2018/07/28."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000104 "A health care process assay that is the mereological sum of laboratory test(s) that are directed by a single prescription directive item."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000104 "directed laboratory test group"@en)
-SubClassOf(obo:LABO_0000104 obo:OGMS_0000108)
-SubClassOf(obo:LABO_0000104 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000107))
-SubClassOf(obo:LABO_0000104 ObjectExactCardinality(1 obo:LABO_0000115 obo:LABO_0000105))
-
-# Class: obo:LABO_0000105 (laboratory test directive item)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000105 "'complete blood count'
-'serum sodium'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000105 "An action specification that directs one or several laboratory tests and such that none of its proper parts directs some but not all of those laboratory tests."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000105 "A laboratory test directive item can direct several tests - consider e.g. 'CBC' (complete blood count), which directs more than 20 tests (red blood cells, white blood cells, hemoglobin, etc.)
-Many laboratory test directive items are parts of a prescription, but not all - consider e.g. an instruction directing a laboratory test as part of a research study."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000105 "laboratory test directive item"@en)
-SubClassOf(obo:LABO_0000105 obo:IAO_0000007)
-
-# Class: obo:LABO_0000106 (laboratory test start time specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000106 "'2018/08/22' in 'CBC on 2018/08/22'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000106 "An information content entity that specifies at what time a laboratory test should start."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000106 "Not all laboratory test prescription items specify a start time. It is sometimes implicit when it is to be done."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000106 "laboratory test start time specification"@en)
-SubClassOf(obo:LABO_0000106 obo:IAO_0000030)
-SubClassOf(obo:LABO_0000106 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000105))
-
-# Class: obo:LABO_0000107 (laboratory test)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000107 "A measurement assay that has as input a specimen derived from an organism and that aims as having as output a data item that is about an entity related to the specimen."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000107 "Not all laboratory tests are directed by a prescription, e.g. a laboratory test executed as part of a research project, or an additional test realized by a laboratory technician in case a first prescribed laboratory test led to an abnormal result.
-
-A laboratory test is directed by some instruction that is part of a plan specification with the objective to assess some entity related to a specimen (e.g. one of its quality) specified by a specimen characteristic specification. However, a laboratory test can be interrupted without leading to a completed laboratory test."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000107 "laboratory test"@en)
-SubClassOf(obo:LABO_0000107 obo:OGMS_0000108)
-SubClassOf(obo:LABO_0000107 ObjectSomeValuesFrom(obo:LABO_0000115 ObjectIntersectionOf(obo:IAO_0000007 ObjectSomeValuesFrom(obo:BFO_0000050 ObjectIntersectionOf(obo:IAO_0000104 ObjectSomeValuesFrom(obo:BFO_0000051 ObjectIntersectionOf(obo:IAO_0000005 ObjectSomeValuesFrom(obo:IAO_0000136 ObjectIntersectionOf(obo:BFO_0000001 ObjectSomeValuesFrom(ObjectInverseOf(obo:IAO_0000136) obo:LABO_0000102))))))))))
-SubClassOf(obo:LABO_0000107 ObjectSomeValuesFrom(obo:OBI_0000293 obo:OBI_0100051))
-
-# Class: obo:LABO_0000108 (validated laboratory test)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000108 "A completed laboratory test that has as specified output a laboratory finding."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000108 "A completed laboratory test that involved a problem of calibration can lead to some result, but this result does not support an inference about a quality of the patient, and therefore is not a laboratory finding."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000108 "validated laboratory test"@en)
-EquivalentClasses(obo:LABO_0000108 ObjectIntersectionOf(obo:OGMS_0000056 ObjectSomeValuesFrom(obo:OBI_0000299 obo:OGMS_0000018)))
-
-# Class: obo:LABO_0000109 (laboratory result)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000109 "A representation of an entity related to a specimen that is the output of a laboratory test."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000109 "A laboratory result is not necessarily a laboratory finding, as it cannot always support an inference to an assertion about some quality of the patient. For example, the serum sodium result of a miscalibrated machine is not a laboratory finding. Also, a laboratory result by automatic detection \"70.10^3 /microliter\" for platelets might be falsely low due to platelets clumping.
-
-However, a laboratory finding is always a laboratory result."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000109 "laboratory result"@en)
-SubClassOf(obo:LABO_0000109 obo:OGMS_0000014)
-SubClassOf(obo:LABO_0000109 ObjectSomeValuesFrom(obo:OBI_0000312 obo:LABO_0000107))
-
-# Class: obo:LABO_0000110 (laboratory test reporting item time specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000110 "'2018/07/25, 12:34 pm' in a laboratory test reporting information 'serum sodium in progress, 2018/07/25, 12:34 pm'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000110 "A laboratory test reporting information that specifies a time at which a laboratory test reporting item was valid."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000110 "This time specification does not refer to the time when a given lab document was generated, but rather the moment at which information from the laboratory test process was created as it unfolded."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000110 "laboratory test reporting item time specification"@en)
-SubClassOf(obo:LABO_0000110 obo:LABO_0000019)
-
-# Class: obo:LABO_0000111 (laboratory test objective specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000111 "'to follow rhumatoid arthritis' on a prescription for a test of sedimentation rate
-'to exclude pulmonary embolism' on a guideline document about d-dimer"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000111 "A health care objective specification that specifies why a laboratory test should be performed."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000111 "laboratory test objective specification"@en)
-SubClassOf(obo:LABO_0000111 obo:PDRO_0010010)
-
-# Class: obo:LABO_0000112 (prescription of laboratory test objective specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000112 "A laboratory test objective specification that is a part of a laboratory test prescription."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000112 "prescription of laboratory test objective specification"@en)
-EquivalentClasses(obo:LABO_0000112 ObjectIntersectionOf(obo:LABO_0000111 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000018)))
-
-# Class: obo:LABO_0000113 (laboratory test specimen specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000113 "'accession-id #150 whole blood 3 ml'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000113 "An information content entity that denotes a particular specimen on which a laboratory test is intended to be executed or has already been executed."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000113 "Une entité de contenu informationnel qui est à propos d'une entité biologique particulière ou d'une classe d'entité biologique sur laquelle quelqu'un a l'intention de prendre une mesure ou sur laquelle une mesure a déjà été prise."@fr)
-AnnotationAssertion(rdfs:label obo:LABO_0000113 "laboratory test specimen specification"@en)
-SubClassOf(obo:LABO_0000113 obo:IAO_0000030)
-SubClassOf(obo:LABO_0000113 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000005))
-SubClassOf(obo:LABO_0000113 ObjectExactCardinality(1 obo:BFO_0000051 obo:OBI_0001616))
-
-# Class: obo:LABO_0000114 (range)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000114 "A generically dependent continuant that specifies a lower bound and an upper bound.
-It can also specify whether each bound is included or not in the interval."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000114 "range"@en)
-SubClassOf(obo:LABO_0000114 obo:BFO_0000031)
-SubClassOf(obo:LABO_0000114 ObjectSomeValuesFrom(obo:OBI_0001938 obo:LABO_0000154))
-
-# Class: obo:LABO_0000117 (laboratory test result normal range)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000117 "A range of values asserted by the testing lab or the kit manufacturer to be normal based on a statistical treatment of values from a reference population."@en)
-AnnotationAssertion(rdfs:comment obo:LABO_0000117 "Definition adapted from OGMS' definition for \"normal value\". \"Normal value\" and \"normal range\" should be coordinated."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000117 "laboratory test result normal range"@en)
-SubClassOf(obo:LABO_0000117 obo:LABO_0000114)
-SubClassOf(obo:LABO_0000117 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000122))
-SubClassOf(obo:LABO_0000117 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000123))
-
-# Class: obo:LABO_0000120 (lower bound)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000120 "A bound that is the lower bound of a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000120 "lower bound"@en)
-SubClassOf(obo:LABO_0000120 obo:LABO_0000023)
-
-# Class: obo:LABO_0000121 (upper bound)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000121 "A bound that is the upper bound of a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000121 "upper bound"@en)
-SubClassOf(obo:LABO_0000121 obo:LABO_0000023)
-
-# Class: obo:LABO_0000122 (laboratory test result normal range lower bound)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000122 "A lower bound value of a laboratory test result normal range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000122 "laboratory test result normal range lower bound"@en)
-EquivalentClasses(obo:LABO_0000122 ObjectIntersectionOf(obo:LABO_0000120 ObjectSomeValuesFrom(obo:BFO_0000050 ObjectIntersectionOf(obo:LABO_0000154 ObjectSomeValuesFrom(ObjectInverseOf(obo:OBI_0001938) obo:LABO_0000117)))))
-
-# Class: obo:LABO_0000123 (laboratory test result normal range upper bound)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000123 "An upper bound value of a laboratory test result normal range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000123 "laboratory test result normal range upper bound"@en)
-EquivalentClasses(obo:LABO_0000123 ObjectIntersectionOf(obo:LABO_0000121 ObjectSomeValuesFrom(obo:BFO_0000050 ObjectIntersectionOf(obo:LABO_0000154 ObjectSomeValuesFrom(ObjectInverseOf(obo:OBI_0001938) obo:LABO_0000117)))))
-
-# Class: obo:LABO_0000124 (laboratory test directive item group)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000124 "'CBC, INR q2h start 2h post-op for 24h'
-
-composed by the items 'CBC' and 'INR' and a starting condition statement '2h post-op', a continuing condition statement 'for 24h' and a testing condition statement 'q2h'
-
-'CBC' that is composed by a single laboratory test directive item."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000124 "An action specification that has as parts one or several laboratory test directive items, as well as possibly some statements specifying a starting condition, a stopping condiiton and a testing condition."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000124 "laboratory test directive item group"@en)
-SubClassOf(obo:LABO_0000124 obo:IAO_0000007)
-SubClassOf(obo:LABO_0000124 ObjectSomeValuesFrom(obo:BFO_0000051 obo:LABO_0000105))
-
-# Class: obo:LABO_0000129 (reported laboratory test result normal range)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000129 "A laboratory test result normal range that is reported in a laboratory test reporting item."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000129 "reported laboratory test result normal range"@en)
-EquivalentClasses(obo:LABO_0000129 ObjectIntersectionOf(obo:LABO_0000117 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000100)))
-
-# Class: obo:LABO_0000130 (scalar laboratory result)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000130 "'140 g/L' as a result of hemgolobin concentration"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000130 "A laboratory result that has a scalar value specification."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000130 "scalar laboratory result"@en)
-EquivalentClasses(obo:LABO_0000130 ObjectIntersectionOf(obo:LABO_0000109 ObjectSomeValuesFrom(obo:OBI_0001938 obo:OBI_0001931)))
-
-# Class: obo:LABO_0000131 (range laboratory result)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000131 "'[20,80] APL units' as a result of anticardiolipin antibody"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000131 "A laboratory result that is given as a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000131 "range laboratory result"@en)
-EquivalentClasses(obo:LABO_0000131 ObjectIntersectionOf(obo:LABO_0000109 ObjectSomeValuesFrom(obo:OBI_0001938 obo:LABO_0000154)))
-
-# Class: obo:LABO_0000132 (textual laboratory result)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000132 "'negative' as a result of HIV test"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000132 "A laboratory result that is given as a textual entity."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000132 "textual laboratory result"@en)
-SubClassOf(obo:LABO_0000132 obo:LABO_0000109)
-SubClassOf(obo:LABO_0000132 ObjectSomeValuesFrom(obo:BFO_0000051 obo:IAO_0000300))
-
-# Class: obo:LABO_0000133 (laboratory test definition range)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000133 "[0, 100000] ppm of Hg
-[-10 V,+30 V["@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000133 "A range of values asserted as possible valid values by the testing lab or the kit manufacturer."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:LABO_0000133 "It is about all laboratory results from all laboratory tests of a given kind."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000133 "laboratory test definition range"@en)
-SubClassOf(obo:LABO_0000133 obo:LABO_0000114)
-SubClassOf(obo:LABO_0000133 ObjectSomeValuesFrom(obo:IAO_0000136 ObjectIntersectionOf(obo:IAO_0000033 ObjectSomeValuesFrom(obo:LABO_0000116 obo:LABO_0000107))))
-
-# Class: obo:LABO_0000134 (result range)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000134 "result range"@en)
-SubClassOf(obo:LABO_0000134 obo:LABO_0000114)
-
-# Class: obo:LABO_0000135 (fully specified range value specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000135 "A range value specification that specifies a lower and an upper bound and wether each bound is included or excluded."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000135 "fully specified range value specification"@en)
-EquivalentClasses(obo:LABO_0000135 ObjectIntersectionOf(obo:LABO_0000154 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000120) ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000121) ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000138) ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000141)))
-
-# Class: obo:LABO_0000136 (range inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000136 "- \" [ \" in \"]1,3[\"
-- \"] \" \"]1,3[\"
-- \"strictly\" in \"lower or equal to 6 and strictly greater than 0\"
-- \"or equal\" in \"lower or equal to 6 and strictly greater than 0\""@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000136 "An information content entity that specifies whether a cutoff value should be included or excluded in a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000136 "range inclusion specification"@en)
-SubClassOf(obo:LABO_0000136 obo:IAO_0000030)
-
-# Class: obo:LABO_0000137 (interval-notation range inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000137 "A range inclusion specification written with interval notation. There are only two individuals."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000137 "interval-notation range inclusion specification"@en)
-SubClassOf(obo:LABO_0000137 obo:LABO_0000136)
-
-# Class: obo:LABO_0000138 (lower bound inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000138 "A range inclusion specification for the lower bound of a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000138 "lower bound inclusion specification"@en)
-SubClassOf(obo:LABO_0000138 obo:LABO_0000136)
-
-# Class: obo:LABO_0000139 (included lower bound inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000139 "A lower bound inclusion specification specifying the lower bound is included."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000139 "included lower bound inclusion specification"@en)
-SubClassOf(obo:LABO_0000139 obo:LABO_0000138)
-DisjointClasses(obo:LABO_0000139 obo:LABO_0000140)
-
-# Class: obo:LABO_0000140 (excluded lower bound inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000140 "A lower bound inclusion specification specifying the lower bound is excluded."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000140 "excluded lower bound inclusion specification"@en)
-SubClassOf(obo:LABO_0000140 obo:LABO_0000138)
-
-# Class: obo:LABO_0000141 (upper bound inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000141 "A range inclusion specification for the upper bound of a range."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000141 "upper bound inclusion specification"@en)
-SubClassOf(obo:LABO_0000141 obo:LABO_0000136)
-
-# Class: obo:LABO_0000142 (included upper bound inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000142 "An upper bound inclusion specification specifying the upper bound is included."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000142 "included upper bound inclusion specification"@en)
-SubClassOf(obo:LABO_0000142 obo:LABO_0000141)
-DisjointClasses(obo:LABO_0000142 obo:LABO_0000143)
-
-# Class: obo:LABO_0000143 (excluded upper bound inclusion specification)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000143 "An upper bound inclusion specification specifying the upper bound is excluded."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000143 "excluded upper bound inclusion specification"@en)
-SubClassOf(obo:LABO_0000143 obo:LABO_0000141)
-
-# Class: obo:LABO_0000144 (derived normalized range laboratory result)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000144 "'[0,10[ ml/m2' is the derived normalized result of laboratory result: '<10 ml/m2'."@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000144 "A range laboratory result that is represented in a normalized way and that is the result of the transformation of an original laboratory result."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000144 "derived normalized range laboratory result"@en)
-SubClassOf(obo:LABO_0000144 obo:LABO_0000131)
-
-# Class: obo:LABO_0000145 (closed range laboratory result)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000145 "closed range laboratory result"@en)
-EquivalentClasses(obo:LABO_0000145 ObjectIntersectionOf(obo:LABO_0000131 ObjectExactCardinality(1 obo:OBI_0001938 obo:LABO_0000155)))
-
-# Class: obo:LABO_0000146 (scalar range)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000146 "scalar range"@en)
-SubClassOf(obo:LABO_0000146 obo:LABO_0000114)
-SubClassOf(obo:LABO_0000146 ObjectSomeValuesFrom(obo:BFO_0000051 obo:IAO_0000003))
-SubClassOf(obo:LABO_0000146 ObjectExactCardinality(1 obo:BFO_0000051 ObjectIntersectionOf(obo:LABO_0000120 obo:OBI_0001933 DataExactCardinality(1 obo:OBI_0001937))))
-SubClassOf(obo:LABO_0000146 ObjectExactCardinality(1 obo:BFO_0000051 ObjectIntersectionOf(obo:LABO_0000121 obo:OBI_0001933 DataExactCardinality(1 obo:OBI_0001937))))
-
-# Class: obo:LABO_0000149 (derived normalized closed range laboratory result)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000149 "derived normalized closed range laboratory result"@en)
-EquivalentClasses(obo:LABO_0000149 ObjectIntersectionOf(obo:LABO_0000144 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000139) ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000142)))
-
-# Class: obo:LABO_0000150 (derived normalized scalar laboratory result)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000150 "derived normalized scalar laboratory result"@en)
-SubClassOf(obo:LABO_0000150 obo:LABO_0000130)
-
-# Class: obo:LABO_0000152 (derived normalized textual laboratory result)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000152 "derived normalized textual laboratory result"@en)
-SubClassOf(obo:LABO_0000152 obo:LABO_0000132)
-
-# Class: obo:LABO_0000153 (calculated data item)
-
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000153 "A data item that was generated on the basis of a calculation."@en)
-AnnotationAssertion(rdfs:comment obo:LABO_0000153 "The definition is based on OBI's definition of 'predicted data item'. However, a data item that is generated on the basis of a calculation doesn't have to be the result of a prediction; it can be the result of an estimation.
-
-for example: the estimated glomerular filtration rate (eGFR)"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000153 "calculated data item"@en)
-SubClassOf(obo:LABO_0000153 obo:IAO_0000027)
-SubClassOf(obo:LABO_0000153 ObjectSomeValuesFrom(obo:OBI_0001938 obo:OBI_0001933))
-
-# Class: obo:LABO_0000154 (range value specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000154 "' < 120 mmol'
-
-'[15, 20['
-
-'3.5 to 10.5 billion/L'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000154 "A value specification that has as part at least a lower bound or an upper bound."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000154 "range value specification"@en)
-SubClassOf(obo:LABO_0000154 obo:OBI_0001933)
-SubClassOf(obo:LABO_0000154 ObjectMinCardinality(1 obo:BFO_0000051 ObjectUnionOf(obo:LABO_0000120 obo:LABO_0000121)))
-SubClassOf(obo:LABO_0000154 ObjectMaxCardinality(1 obo:BFO_0000051 obo:LABO_0000120))
-SubClassOf(obo:LABO_0000154 ObjectMaxCardinality(1 obo:BFO_0000051 obo:LABO_0000121))
-SubClassOf(obo:LABO_0000154 ObjectMaxCardinality(1 obo:BFO_0000051 obo:LABO_0000138))
-SubClassOf(obo:LABO_0000154 ObjectMaxCardinality(1 obo:BFO_0000051 obo:LABO_0000141))
-
-# Class: obo:LABO_0000155 (closed range value specification)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000155 "closed range value specification"@en)
-EquivalentClasses(obo:LABO_0000155 ObjectIntersectionOf(obo:LABO_0000135 ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000139) ObjectExactCardinality(1 obo:BFO_0000051 obo:LABO_0000142)))
-
-# Class: obo:LABO_0000160 (ratio value specification)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000160 "6%
+&apos;serum sodium in progress&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test reporting information which reports on the test(s) directed by one laboratory test directive item.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une partie d&apos;un document d&apos;analyse de laboratoire qui spécifie des résultats des tests.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">A laboratory test reporting group does not necessarily provide the reporting information concerning a laboratory test directive item in a prescription - the directive item can also be specified e.g. in a research protocol.
+
+A laboratory test reporting group can, but doesn&apos;t have to, include a laboratory test reporting item, as in &apos;CBC in progress&apos; (which is not a laboratory test reporting item, because it reports on several tests, not just one).</obo:IAO_0000600>
+        <rdfs:label xml:lang="fr">groupement de résultats pour un test de laboratoire</rdfs:label>
+        <rdfs:label xml:lang="en">laboratory test reporting group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <obo:IAO_0000115 xml:lang="en">A value specification that is the the lower bound or the upper bound of a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">bound</rdfs:label>
+        <rdfs:label xml:lang="fr">valeur limite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000102"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000110"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000107"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;serum sodium in progress, 2018/07/25&apos;
+&apos;serum sodium 140 mmol/L, 2018/08/14&apos;
+&apos;blood group O, 2018/07/12 12:34 pm&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test reporting information that is part of a laboratory test reporting group, that is about a laboratory test, and that mentions which characteristic of a specimen this test was supposed to assess, and a time at which this information was valid.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test reporting item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000101 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000101">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;in progress&apos; in &apos;FSC, in progress, 2018/07/25&apos;
+&apos;resulted&apos; in &apos;blood group O, resulted, 2018/07/12 12:34 pm&apos;
+&apos;validated&apos; in &apos;serum sodium 140 mmol/L, validated, 2018/07/28&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test reporting information that specifies the status of a laboratory test or a group of laboratory tests.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test status specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000102 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000102">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;serum sodium concentration&apos; in &apos;serum sodium concentration 140 mmol/L, validated, 2018/07/28&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that specifies a particular characteristic of a specimen or a class of characteristics of specimens.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">specimen characteristic specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000103 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000103">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/HADO_0000004"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/HADO_0000006"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A document reporting on a laboratory test.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test report document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000104">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000108"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000107"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/LABO_0000115"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000105"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">All tests (white blood cells, red blood cells, etc.) realized when executing a prescription of CBC for John Smith on 2018/07/28.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A health care process assay that is the mereological sum of laboratory test(s) that are directed by a single prescription directive item.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">directed laboratory test group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000105 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000105">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;complete blood count&apos;
+&apos;serum sodium&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An action specification that directs one or several laboratory tests and such that none of its proper parts directs some but not all of those laboratory tests.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">A laboratory test directive item can direct several tests - consider e.g. &apos;CBC&apos; (complete blood count), which directs more than 20 tests (red blood cells, white blood cells, hemoglobin, etc.)
+Many laboratory test directive items are parts of a prescription, but not all - consider e.g. an instruction directing a laboratory test as part of a research study.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">laboratory test directive item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000106 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000106">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000105"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;2018/08/22&apos; in &apos;CBC on 2018/08/22&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that specifies at what time a laboratory test should start.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">Not all laboratory test prescription items specify a start time. It is sometimes implicit when it is to be done.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">laboratory test start time specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000107 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000107">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000108"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/LABO_0000115"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000007"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000104"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000005"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000001"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty>
+                                                                                    <rdf:Description>
+                                                                                        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                                                                    </rdf:Description>
+                                                                                </owl:onProperty>
+                                                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000102"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A measurement assay that has as input a specimen derived from an organism and that aims as having as output a data item that is about an entity related to the specimen.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">Not all laboratory tests are directed by a prescription, e.g. a laboratory test executed as part of a research project, or an additional test realized by a laboratory technician in case a first prescribed laboratory test led to an abnormal result.
+
+A laboratory test is directed by some instruction that is part of a plan specification with the objective to assess some entity related to a specimen (e.g. one of its quality) specified by a specimen characteristic specification. However, a laboratory test can be interrupted without leading to a completed laboratory test.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">laboratory test</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000108 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000108">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000056"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000018"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 xml:lang="en">A completed laboratory test that has as specified output a laboratory finding.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">A completed laboratory test that involved a problem of calibration can lead to some result, but this result does not support an inference about a quality of the patient, and therefore is not a laboratory finding.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">validated laboratory test</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000109 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000109">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000014"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000107"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A representation of an entity related to a specimen that is the output of a laboratory test.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">A laboratory result is not necessarily a laboratory finding, as it cannot always support an inference to an assertion about some quality of the patient. For example, the serum sodium result of a miscalibrated machine is not a laboratory finding. Also, a laboratory result by automatic detection &quot;70.10^3 /microliter&quot; for platelets might be falsely low due to platelets clumping.
+
+However, a laboratory finding is always a laboratory result.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000110 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000110">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000019"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;2018/07/25, 12:34 pm&apos; in a laboratory test reporting information &apos;serum sodium in progress, 2018/07/25, 12:34 pm&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test reporting information that specifies a time at which a laboratory test reporting item was valid.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">This time specification does not refer to the time when a given lab document was generated, but rather the moment at which information from the laboratory test process was created as it unfolded.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">laboratory test reporting item time specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000111 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000111">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PDRO_0010010"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;to follow rhumatoid arthritis&apos; on a prescription for a test of sedimentation rate
+&apos;to exclude pulmonary embolism&apos; on a guideline document about d-dimer</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A health care objective specification that specifies why a laboratory test should be performed.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test objective specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000112 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000112">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000111"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000018"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test objective specification that is a part of a laboratory test prescription.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">prescription of laboratory test objective specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000113 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000113">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000005"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0001616"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;accession-id #150 whole blood 3 ml&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that denotes a particular specimen on which a laboratory test is intended to be executed or has already been executed.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="fr">Une entité de contenu informationnel qui est à propos d&apos;une entité biologique particulière ou d&apos;une classe d&apos;entité biologique sur laquelle quelqu&apos;un a l&apos;intention de prendre une mesure ou sur laquelle une mesure a déjà été prise.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test specimen specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000114 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000114">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000154"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A generically dependent continuant that specifies a lower bound and an upper bound.
+It can also specify whether each bound is included or not in the interval.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000117 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000117">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000114"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000122"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000123"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A range of values asserted by the testing lab or the kit manufacturer to be normal based on a statistical treatment of values from a reference population.</obo:IAO_0000115>
+        <rdfs:comment xml:lang="en">Definition adapted from OGMS&apos; definition for &quot;normal value&quot;. &quot;Normal value&quot; and &quot;normal range&quot; should be coordinated.</rdfs:comment>
+        <rdfs:label xml:lang="en">laboratory test result normal range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000120 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000120">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000023"/>
+        <obo:IAO_0000115 xml:lang="en">A bound that is the lower bound of a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">lower bound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000121 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000023"/>
+        <obo:IAO_0000115 xml:lang="en">A bound that is the upper bound of a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">upper bound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000122 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000122">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000120"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000154"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty>
+                                            <rdf:Description>
+                                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                            </rdf:Description>
+                                        </owl:onProperty>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000117"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 xml:lang="en">A lower bound value of a laboratory test result normal range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test result normal range lower bound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000123 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000123">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000121"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000154"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty>
+                                            <rdf:Description>
+                                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                            </rdf:Description>
+                                        </owl:onProperty>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000117"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 xml:lang="en">An upper bound value of a laboratory test result normal range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test result normal range upper bound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000124 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000124">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000105"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;CBC, INR q2h start 2h post-op for 24h&apos;
+
+composed by the items &apos;CBC&apos; and &apos;INR&apos; and a starting condition statement &apos;2h post-op&apos;, a continuing condition statement &apos;for 24h&apos; and a testing condition statement &apos;q2h&apos;
+
+&apos;CBC&apos; that is composed by a single laboratory test directive item.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An action specification that has as parts one or several laboratory test directive items, as well as possibly some statements specifying a starting condition, a stopping condiiton and a testing condition.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">laboratory test directive item group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000129 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000129">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000100"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 xml:lang="en">A laboratory test result normal range that is reported in a laboratory test reporting item.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">reported laboratory test result normal range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000130 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000130">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000112 xml:lang="en">&apos;140 g/L&apos; as a result of hemgolobin concentration</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory result that has a scalar value specification.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">scalar laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000131 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000131">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000154"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000112 xml:lang="en">&apos;[20,80] APL units&apos; as a result of anticardiolipin antibody</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory result that is given as a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">range laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000132 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000132">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000300"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos;negative&apos; as a result of HIV test</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory result that is given as a textual entity.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">textual laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000133 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000133">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000114"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000033"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/LABO_0000116"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000107"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">[0, 100000] ppm of Hg
+[-10 V,+30 V[</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A range of values asserted as possible valid values by the testing lab or the kit manufacturer.</obo:IAO_0000115>
+        <obo:IAO_0000600 xml:lang="en">It is about all laboratory results from all laboratory tests of a given kind.</obo:IAO_0000600>
+        <rdfs:label xml:lang="en">laboratory test definition range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000134 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000134">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000114"/>
+        <rdfs:label xml:lang="en">result range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000135 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000135">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000154"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000120"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000121"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000138"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000141"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 xml:lang="en">A range value specification that specifies a lower and an upper bound and wether each bound is included or excluded.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">fully specified range value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000136 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000136">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">- &quot; [ &quot; in &quot;]1,3[&quot;
+- &quot;] &quot; &quot;]1,3[&quot;
+- &quot;strictly&quot; in &quot;lower or equal to 6 and strictly greater than 0&quot;
+- &quot;or equal&quot; in &quot;lower or equal to 6 and strictly greater than 0&quot;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that specifies whether a cutoff value should be included or excluded in a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">range inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000137 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000137">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000136"/>
+        <obo:IAO_0000115 xml:lang="en">A range inclusion specification written with interval notation. There are only two individuals.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">interval-notation range inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000138 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000138">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000136"/>
+        <obo:IAO_0000115 xml:lang="en">A range inclusion specification for the lower bound of a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">lower bound inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000139 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000139">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000138"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/LABO_0000140"/>
+        <obo:IAO_0000115 xml:lang="en">A lower bound inclusion specification specifying the lower bound is included.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">included lower bound inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000140">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000138"/>
+        <obo:IAO_0000115 xml:lang="en">A lower bound inclusion specification specifying the lower bound is excluded.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">excluded lower bound inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000141 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000141">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000136"/>
+        <obo:IAO_0000115 xml:lang="en">A range inclusion specification for the upper bound of a range.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">upper bound inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000142 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000142">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000141"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/LABO_0000143"/>
+        <obo:IAO_0000115 xml:lang="en">An upper bound inclusion specification specifying the upper bound is included.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">included upper bound inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000143 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000143">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000141"/>
+        <obo:IAO_0000115 xml:lang="en">An upper bound inclusion specification specifying the upper bound is excluded.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">excluded upper bound inclusion specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000144 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000144">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000131"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;[0,10[ ml/m2&apos; is the derived normalized result of laboratory result: &apos;&lt;10 ml/m2&apos;.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A range laboratory result that is represented in a normalized way and that is the result of the transformation of an original laboratory result.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">derived normalized range laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000145 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000145">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000131"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000155"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">closed range laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000146 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000146">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000114"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000120"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000121"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">scalar range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000149 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000149">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000144"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000139"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000142"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">derived normalized closed range laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000150">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000130"/>
+        <rdfs:label xml:lang="en">derived normalized scalar laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000152 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000152">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000132"/>
+        <rdfs:label xml:lang="en">derived normalized textual laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000153 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000153">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A data item that was generated on the basis of a calculation.</obo:IAO_0000115>
+        <rdfs:comment xml:lang="en">The definition is based on OBI&apos;s definition of &apos;predicted data item&apos;. However, a data item that is generated on the basis of a calculation doesn&apos;t have to be the result of a prediction; it can be the result of an estimation.
+
+for example: the estimated glomerular filtration rate (eGFR)</rdfs:comment>
+        <rdfs:label xml:lang="en">calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000154 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000154">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000120"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000121"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000120"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000121"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000138"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000141"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">&apos; &lt; 120 mmol&apos;
+
+&apos;[15, 20[&apos;
+
+&apos;3.5 to 10.5 billion/L&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A value specification that has as part at least a lower bound or an upper bound.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">range value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000155 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000155">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000135"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000139"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000142"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">closed range value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000160 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000160">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112 xml:lang="en">6%
 0.08
-154 ppm"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000160 "A value specification that specifies a ratio value, without any unit or with a dimensionless unit."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000160 "ratio value specification"@en)
-SubClassOf(obo:LABO_0000160 obo:OBI_0001933)
-SubClassOf(obo:LABO_0000160 DataMinCardinality(1 obo:OBI_0001937))
-
-# Class: obo:LABO_0000161 (laboratory result-based calculated data item)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000161 "'eGFR: 65 ml/min/1.73 m2'"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000161 "A calculated data item that is produced by a calculation process that has as input a laboratory result."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000161 "laboratory result-based calculated data item")
-EquivalentClasses(obo:LABO_0000161 ObjectIntersectionOf(obo:LABO_0000153 ObjectSomeValuesFrom(obo:OBI_0000312 ObjectIntersectionOf(obo:OBI_0000011 ObjectSomeValuesFrom(obo:OBI_0000293 obo:LABO_0000109)))))
-SubClassOf(obo:LABO_0000161 obo:LABO_0000153)
-
-# Class: obo:LABO_0000162 (ratio laboratory result)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000162 "'6%' as a result for HbA1C measurement
-'0.055' as a result for HbA1C measurement
-
-'50%' as a result for hematocrit measurement on a complete blood count"@en)
-AnnotationAssertion(obo:IAO_0000115 obo:LABO_0000162 "A laboratory result that is given as a ratio."@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000162 "ratio laboratory result"@en)
-EquivalentClasses(obo:LABO_0000162 ObjectIntersectionOf(obo:LABO_0000109 ObjectSomeValuesFrom(obo:OBI_0001938 obo:LABO_0000160)))
-
-# Class: obo:LABO_0000170 (range calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000170 "range calculated data item"@en)
-SubClassOf(obo:LABO_0000170 obo:LABO_0000153)
-SubClassOf(obo:LABO_0000170 ObjectSomeValuesFrom(obo:OBI_0001938 obo:LABO_0000154))
-
-# Class: obo:LABO_0000171 (ratio calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000171 "ratio calculated data item"@en)
-SubClassOf(obo:LABO_0000171 obo:LABO_0000153)
-SubClassOf(obo:LABO_0000171 ObjectSomeValuesFrom(obo:OBI_0001938 obo:LABO_0000160))
-
-# Class: obo:LABO_0000172 (scalar calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000172 "scalar calculated data item"@en)
-SubClassOf(obo:LABO_0000172 obo:LABO_0000153)
-SubClassOf(obo:LABO_0000172 ObjectSomeValuesFrom(obo:OBI_0001938 obo:OBI_0001931))
-
-# Class: obo:LABO_0000173 (laboratory result-based scalar calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000173 "laboratory result-based scalar calculated data item"@en)
-EquivalentClasses(obo:LABO_0000173 ObjectIntersectionOf(obo:LABO_0000172 ObjectSomeValuesFrom(obo:OBI_0000312 ObjectIntersectionOf(obo:OBI_0000011 ObjectSomeValuesFrom(obo:OBI_0000293 obo:LABO_0000109)))))
-
-# Class: obo:LABO_0000174 (laboratory result-based ratio calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000174 "laboratory result-based ratio calculated data item"@en)
-EquivalentClasses(obo:LABO_0000174 ObjectIntersectionOf(obo:LABO_0000171 ObjectSomeValuesFrom(obo:OBI_0000312 ObjectIntersectionOf(obo:OBI_0000011 ObjectSomeValuesFrom(obo:OBI_0000293 obo:LABO_0000109)))))
-
-# Class: obo:LABO_0000175 (laboratory result-based range calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000175 "laboratory result-based range calculated data item"@en)
-EquivalentClasses(obo:LABO_0000175 ObjectIntersectionOf(obo:LABO_0000170 ObjectSomeValuesFrom(obo:OBI_0000312 ObjectIntersectionOf(obo:OBI_0000011 ObjectSomeValuesFrom(obo:OBI_0000293 obo:LABO_0000109)))))
-
-# Class: obo:LABO_0000176 (derived normalized laboratory result-based range calculated data item)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000176 "derived normalized laboratory result-based range calculated data item"@en)
-SubClassOf(obo:LABO_0000176 obo:LABO_0000175)
-
-# Class: obo:LABO_0000177 (laboratory test specification)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000177 "laboratory test specification"@en)
-SubClassOf(obo:LABO_0000177 obo:IAO_0000030)
-SubClassOf(obo:LABO_0000177 ObjectSomeValuesFrom(obo:IAO_0000219 obo:LABO_0000107))
-
-# Class: obo:LABO_0000178 (laboratory test identifier)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000178 "'12345' to refer to a serum creatinin test"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000178 "laboratory test identifier"@en)
-SubClassOf(obo:LABO_0000178 obo:LABO_0000177)
-
-# Class: obo:LABO_0000179 (laboratory test name)
-
-AnnotationAssertion(obo:IAO_0000112 obo:LABO_0000179 "'serum creatinin test'"@en)
-AnnotationAssertion(rdfs:label obo:LABO_0000179 "laboratory test name"@en)
-SubClassOf(obo:LABO_0000179 obo:LABO_0000177)
-
-# Class: obo:LABO_0000181 (laboratory test reporting item identifier)
-
-AnnotationAssertion(rdfs:label obo:LABO_0000181 "laboratory test reporting item identifier"@en)
-SubClassOf(obo:LABO_0000181 obo:LABO_0000019)
-SubClassOf(obo:LABO_0000181 ObjectExactCardinality(1 obo:IAO_0000219 obo:LABO_0000100))
-
-# Class: obo:OGMS_0000018 (laboratory finding)
-
-AnnotationAssertion(griis:GRIIS_comment obo:OGMS_0000018 "Can \"a quality\" be a mereological sum of qualities?
-For example, if a finding is \"A+\", which represents (at least) two qualities of the specimen, does it represent one quality that would be the mereological sume of those qualities?")
-AnnotationAssertion(griis:GRIIS_comment obo:OGMS_0000018 "Note that a laboratory finding does not necessarily represent only a quality of a specimen. It can also represent e.g. a temporal duration (e.g. duration of coagulation).
-
-Therefore, we suggest changing the definition to \"A representation of an entity related to a specimen that is the output of a laboratory test and that can support an inference to an assertion about some specifically dependent continuant of the patient.\"")
-AnnotationAssertion(rdfs:comment obo:OGMS_0000018 "")
-
-# Class: obo:OGMS_0000056 (laboratory test)
-
-AnnotationAssertion(griis:GRIIS_comment obo:OGMS_0000056 "The output is not always about a quality of the specimen (it can be e.g. about a temporal duration when assessing the coagulation speed of a blood specimen)."@en)
-AnnotationAssertion(obo:IAO_0000600 obo:OGMS_0000056 "A completed laboratory result might have as output several laboratory results such as a first nonvalidated result directly from the machine 'serum sodium 140 mmol/L' followed by a second validated result 'serum sodium 140 mmol/L'."@en)
-EquivalentClasses(obo:OGMS_0000056 ObjectIntersectionOf(obo:LABO_0000107 ObjectSomeValuesFrom(obo:OBI_0000299 obo:LABO_0000109)))
-
-# Class: obo:PDRO_0000129 (condition)
-
-SubClassOf(obo:PDRO_0000129 ObjectSomeValuesFrom(obo:BFO_0000050 obo:LABO_0000124))
+154 ppm</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A value specification that specifies a ratio value, without any unit or with a dimensionless unit.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">ratio value specification</rdfs:label>
+    </owl:Class>
+    
 
 
-DisjointClasses(obo:LABO_0000137 obo:LABO_0000138 obo:LABO_0000141)
-SubObjectPropertyOf(ObjectPropertyChain(obo:OBI_0000312 obo:OBI_0000293) obo:LABO_0000148)
-AnnotationAssertion(griis:GRIIS_comment obo:OGMS_0000074 "Note that a laboratory finding does not necessarily represent only a quality of a specimen. It can also represent e.g. a temporal duration (e.g. duration of coagulation).
+    <!-- http://purl.obolibrary.org/obo/LABO_0000161 -->
 
-Therefore, we suggest changing the definition to \"A value for an entity reported in a lab report and asserted by the testing lab or the kit manufacturer to be normal based on a statistical treatment of values from a reference population.\"
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000161">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000153"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000153"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;eGFR: 65 ml/min/1.73 m2&apos;</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A calculated data item that is produced by a calculation process that has as input a laboratory result.</obo:IAO_0000115>
+        <rdfs:label>laboratory result-based calculated data item</rdfs:label>
+    </owl:Class>
+    
 
-We suggest renaming this entity \"lab report normal value\", as \"normal values\" can appear in a variety of contexts.
 
-It seems that \"normal value\" should be classified under \"value specification\"."@en)
-AnnotationAssertion(griis:GRIIS_comment obo:PDRO_0000117 "To be changed using value specifications."@en)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2147483805 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2147483806 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2147483807 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2147483808 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2147483809 "1"^^xsd:nonNegativeInteger)
-AnnotationAssertion(owl:qualifiedCardinality _:genid2147483810 "1"^^xsd:nonNegativeInteger)
-)
+    <!-- http://purl.obolibrary.org/obo/LABO_0000162 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000162">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000160"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000112 xml:lang="en">&apos;6%&apos; as a result for HbA1C measurement
+&apos;0.055&apos; as a result for HbA1C measurement
+
+&apos;50%&apos; as a result for hematocrit measurement on a complete blood count</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A laboratory result that is given as a ratio.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">ratio laboratory result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000170 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000170">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000153"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000154"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">range calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000171 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000171">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000153"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000160"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">ratio calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000172 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000172">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000153"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">scalar calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000173 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000173">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000172"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">laboratory result-based scalar calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000174 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000174">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000171"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">laboratory result-based ratio calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000175 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000175">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000170"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">laboratory result-based range calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000176 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000176">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000175"/>
+        <rdfs:label xml:lang="en">derived normalized laboratory result-based range calculated data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000177 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000177">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000107"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">laboratory test specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000178 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000178">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000177"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;12345&apos; to refer to a serum creatinin test</obo:IAO_0000112>
+        <rdfs:label xml:lang="en">laboratory test identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000179 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000179">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000177"/>
+        <obo:IAO_0000112 xml:lang="en">&apos;serum creatinin test&apos;</obo:IAO_0000112>
+        <rdfs:label xml:lang="en">laboratory test name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/LABO_0000181 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/LABO_0000181">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/LABO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/LABO_0000100"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">laboratory test reporting item identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001616 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001616"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001931"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0100051 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000014 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000014"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000018">
+        <griis:GRIIS_comment>Can &quot;a quality&quot; be a mereological sum of qualities?
+For example, if a finding is &quot;A+&quot;, which represents (at least) two qualities of the specimen, does it represent one quality that would be the mereological sume of those qualities?</griis:GRIIS_comment>
+        <griis:GRIIS_comment>Note that a laboratory finding does not necessarily represent only a quality of a specimen. It can also represent e.g. a temporal duration (e.g. duration of coagulation).
+
+Therefore, we suggest changing the definition to &quot;A representation of an entity related to a specimen that is the output of a laboratory test and that can support an inference to an assertion about some specifically dependent continuant of the patient.&quot;</griis:GRIIS_comment>
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000056 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000056">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000107"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000109"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <griis:GRIIS_comment xml:lang="en">The output is not always about a quality of the specimen (it can be e.g. about a temporal duration when assessing the coagulation speed of a blood specimen).</griis:GRIIS_comment>
+        <obo:IAO_0000600 xml:lang="en">A completed laboratory result might have as output several laboratory results such as a first nonvalidated result directly from the machine &apos;serum sodium 140 mmol/L&apos; followed by a second validated result &apos;serum sodium 140 mmol/L&apos;.</obo:IAO_0000600>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000108 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000108"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PDRO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PDRO_0000001"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PDRO_0000129 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PDRO_0000129">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/LABO_0000124"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PDRO_0010010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PDRO_0010010"/>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000074">
+        <griis:GRIIS_comment xml:lang="en">Note that a laboratory finding does not necessarily represent only a quality of a specimen. It can also represent e.g. a temporal duration (e.g. duration of coagulation).
+
+Therefore, we suggest changing the definition to &quot;A value for an entity reported in a lab report and asserted by the testing lab or the kit manufacturer to be normal based on a statistical treatment of values from a reference population.&quot;
+
+We suggest renaming this entity &quot;lab report normal value&quot;, as &quot;normal values&quot; can appear in a variety of contexts.
+
+It seems that &quot;normal value&quot; should be classified under &quot;value specification&quot;.</griis:GRIIS_comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PDRO_0000117">
+        <griis:GRIIS_comment xml:lang="en">To be changed using value specifications.</griis:GRIIS_comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000137"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000138"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/LABO_0000141"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
