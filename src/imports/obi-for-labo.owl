@@ -1,4 +1,4 @@
-Prefix(:=<http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#>)
+Prefix(:=<http://purl.obolibrary.org/obo/obi/obi-base.owl#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -6,7 +6,7 @@ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
-Ontology(<http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl>
+Ontology(<http://purl.obolibrary.org/obo/obi/obi-base.owl>
 Annotation(<http://protege.stanford.edu/plugins/owl/protege#defaultLanguage> "en"^^xsd:string)
 Annotation(<http://purl.obolibrary.org/obo/IAO_0000589> "Ontology for Biomedical Investigations"@en)
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester"@en)
@@ -71,9 +71,12 @@ Annotation(<http://purl.org/dc/elements/1.1/description> "The Ontology for Biome
 Annotation(<http://purl.org/dc/elements/1.1/format> "OWL-DL"@en)
 Annotation(<http://purl.org/dc/elements/1.1/subject> "An ontology for the annotation of biomedical and functional genomics experiments."@en)
 Annotation(<http://purl.org/dc/terms/license> "http://creativecommons.org/licenses/by/4.0/")
+Annotation(<http://purl.org/dc/terms/title> "Ontology for Biomedical Investigations")
 Annotation(rdfs:comment "Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them."^^xsd:string)
+Annotation(owl:versionInfo "2020-08-26"^^xsd:string)
 
 Declaration(Class(<http://purl.obolibrary.org/obo/BFO_0000023>))
+Declaration(Class(<http://purl.obolibrary.org/obo/BFO_0000030>))
 Declaration(Class(<http://purl.obolibrary.org/obo/BFO_0000040>))
 Declaration(Class(<http://purl.obolibrary.org/obo/IAO_0000005>))
 Declaration(Class(<http://purl.obolibrary.org/obo/IAO_0000030>))
@@ -90,6 +93,7 @@ Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0001616>))
 Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0001931>))
 Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0001933>))
 Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0002076>))
+Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0100026>))
 Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0100051>))
 Declaration(Class(owl:Thing))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))
@@ -130,6 +134,7 @@ Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/format>))
 Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/source>))
 Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/subject>))
 Declaration(AnnotationProperty(<http://purl.org/dc/terms/license>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/title>))
 Declaration(Datatype(rdfs:Literal))
 ############################
 #   Annotation Properties
@@ -139,39 +144,39 @@ Declaration(Datatype(rdfs:Literal))
 
 AnnotationAssertion(rdfs:isDefinedBy <http://protege.stanford.edu/plugins/owl/protege#defaultLanguage> <http://protege.stanford.edu/plugins/owl/protege.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000111> (<http://purl.obolibrary.org/obo/IAO_0000111>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000111> (editor preferred term)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000111> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000112> (<http://purl.obolibrary.org/obo/IAO_0000112>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000112> (example of usage)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000112> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000114> (<http://purl.obolibrary.org/obo/IAO_0000114>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000114> (has curation status)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (<http://purl.obolibrary.org/obo/IAO_0000115>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (definition)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000116> (<http://purl.obolibrary.org/obo/IAO_0000116>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000116> (editor note)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000117> (<http://purl.obolibrary.org/obo/IAO_0000117>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000117> (term editor)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000118> (<http://purl.obolibrary.org/obo/IAO_0000118>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000118> (alternative term)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000118> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000119> (<http://purl.obolibrary.org/obo/IAO_0000119>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000119> (definition source)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000232> (<http://purl.obolibrary.org/obo/IAO_0000232>)
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000232> (curator note)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000232> <http://purl.obolibrary.org/obo/iao.owl>)
 
@@ -220,6 +225,10 @@ AnnotationAssertion(rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/subject> <
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.org/dc/terms/license> <http://purl.org/dc/terms.owl>)
 
+# Annotation Property: <http://purl.org/dc/terms/title> (<http://purl.org/dc/terms/title>)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.org/dc/terms/title> <http://purl.org/dc/terms.owl>)
+
 # Annotation Property: rdfs:comment (rdfs:comment)
 
 AnnotationAssertion(rdfs:isDefinedBy rdfs:comment <http://www.w3.org/2000/01/rdf-schema.owl>)
@@ -228,21 +237,25 @@ AnnotationAssertion(rdfs:isDefinedBy rdfs:comment <http://www.w3.org/2000/01/rdf
 
 AnnotationAssertion(rdfs:isDefinedBy rdfs:label <http://www.w3.org/2000/01/rdf-schema.owl>)
 
+# Annotation Property: owl:versionInfo (owl:versionInfo)
+
+AnnotationAssertion(rdfs:isDefinedBy owl:versionInfo <http://www.w3.org/2002/07/owl.owl>)
+
 
 ############################
 #   Object Properties
 ############################
 
-# Object Property: <http://purl.obolibrary.org/obo/BFO_0000051> (<http://purl.obolibrary.org/obo/BFO_0000051>)
+# Object Property: <http://purl.obolibrary.org/obo/BFO_0000051> (has part)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/bfo.owl>)
 TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>)
 
-# Object Property: <http://purl.obolibrary.org/obo/BFO_0000055> (<http://purl.obolibrary.org/obo/BFO_0000055>)
+# Object Property: <http://purl.obolibrary.org/obo/BFO_0000055> (realizes)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/BFO_0000055> <http://purl.obolibrary.org/obo/bfo.owl>)
 
-# Object Property: <http://purl.obolibrary.org/obo/IAO_0000039> (<http://purl.obolibrary.org/obo/IAO_0000039>)
+# Object Property: <http://purl.obolibrary.org/obo/IAO_0000039> (has measurement unit label)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000039> <http://purl.obolibrary.org/obo/iao.owl>)
 
@@ -341,27 +354,27 @@ SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0001938> <http://purl.ob
 ObjectPropertyDomain(<http://purl.obolibrary.org/obo/OBI_0001938> <http://purl.obolibrary.org/obo/IAO_0000030>)
 ObjectPropertyRange(<http://purl.obolibrary.org/obo/OBI_0001938> <http://purl.obolibrary.org/obo/OBI_0001933>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0000052> (<http://purl.obolibrary.org/obo/RO_0000052>)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0000052> (inheres in)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0000052> <http://purl.obolibrary.org/obo/ro.owl>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0000056> (<http://purl.obolibrary.org/obo/RO_0000056>)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0000056> (participates in)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0000056> <http://purl.obolibrary.org/obo/ro.owl>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0000057> (<http://purl.obolibrary.org/obo/RO_0000057>)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0000057> (has participant)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0000057> <http://purl.obolibrary.org/obo/ro.owl>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0000059> (<http://purl.obolibrary.org/obo/RO_0000059>)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0000059> (concretizes)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0000059> <http://purl.obolibrary.org/obo/ro.owl>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0000087> (<http://purl.obolibrary.org/obo/RO_0000087>)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0000087> (has role)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0000087> <http://purl.obolibrary.org/obo/ro.owl>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0002351> (<http://purl.obolibrary.org/obo/RO_0002351>)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002351> (has member)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0002351> <http://purl.obolibrary.org/obo/ro.owl>)
 
@@ -418,31 +431,31 @@ AnnotationAssertion(rdfs:isDefinedBy owl:real <http://www.w3.org/2002/07/owl.owl
 #   Classes
 ############################
 
-# Class: <http://purl.obolibrary.org/obo/BFO_0000023> (<http://purl.obolibrary.org/obo/BFO_0000023>)
+# Class: <http://purl.obolibrary.org/obo/BFO_0000023> (role)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/BFO_0000023> <http://purl.obolibrary.org/obo/bfo.owl>)
 
-# Class: <http://purl.obolibrary.org/obo/BFO_0000040> (<http://purl.obolibrary.org/obo/BFO_0000040>)
+# Class: <http://purl.obolibrary.org/obo/BFO_0000040> (material entity)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/BFO_0000040> <http://purl.obolibrary.org/obo/bfo.owl>)
 
-# Class: <http://purl.obolibrary.org/obo/IAO_0000005> (<http://purl.obolibrary.org/obo/IAO_0000005>)
+# Class: <http://purl.obolibrary.org/obo/IAO_0000005> (objective specification)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000005> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Class: <http://purl.obolibrary.org/obo/IAO_0000030> (<http://purl.obolibrary.org/obo/IAO_0000030>)
+# Class: <http://purl.obolibrary.org/obo/IAO_0000030> (information content entity)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000030> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Class: <http://purl.obolibrary.org/obo/IAO_0000104> (<http://purl.obolibrary.org/obo/IAO_0000104>)
+# Class: <http://purl.obolibrary.org/obo/IAO_0000104> (plan specification)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000104> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Class: <http://purl.obolibrary.org/obo/IAO_0000577> (<http://purl.obolibrary.org/obo/IAO_0000577>)
+# Class: <http://purl.obolibrary.org/obo/IAO_0000577> (centrally registered identifier symbol)
 
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000577> <http://purl.obolibrary.org/obo/iao.owl>)
 
-# Class: <http://purl.obolibrary.org/obo/NCBITaxon_9606> (<http://purl.obolibrary.org/obo/NCBITaxon_9606>)
+# Class: <http://purl.obolibrary.org/obo/NCBITaxon_9606> (Homo sapiens)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000118> <http://purl.obolibrary.org/obo/NCBITaxon_9606> "human being"^^xsd:string)
 AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/NCBITaxon_9606> <http://purl.obolibrary.org/obo/ncbitaxon.owl>)
@@ -452,7 +465,7 @@ AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/NCBITaxon_9
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000111> <http://purl.obolibrary.org/obo/OBI_0000011> "planned process"^^xsd:string)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000112> <http://purl.obolibrary.org/obo/OBI_0000011> "Injecting mice with a vaccine in order to test its efficacy"^^xsd:string)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/OBI_0000011> <http://purl.obolibrary.org/obo/IAO_0000122>)
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/OBI_0000011> "A processual entity that realizes a plan which is the concretization of a plan specification."@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/OBI_0000011> "A process that realizes a plan which is the concretization of a plan specification."@en)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/OBI_0000011> "'Plan' includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn't have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)"^^xsd:string)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/OBI_0000011> "We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
 objectives is a planned process."^^xsd:string)
@@ -592,6 +605,25 @@ AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0002076
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0002076> "collection of specimens"@en)
 EquivalentClasses(<http://purl.obolibrary.org/obo/OBI_0002076> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectAllValuesFrom(<http://purl.obolibrary.org/obo/RO_0002351> <http://purl.obolibrary.org/obo/OBI_0100051>)))
 SubClassOf(<http://purl.obolibrary.org/obo/OBI_0002076> <http://purl.obolibrary.org/obo/BFO_0000040>)
+
+# Class: <http://purl.obolibrary.org/obo/OBI_0100026> (organism)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000111> <http://purl.obolibrary.org/obo/OBI_0100026> "organism"@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000112> <http://purl.obolibrary.org/obo/OBI_0100026> "animal"@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000112> <http://purl.obolibrary.org/obo/OBI_0100026> "fungus"@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000112> <http://purl.obolibrary.org/obo/OBI_0100026> "plant"@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000112> <http://purl.obolibrary.org/obo/OBI_0100026> "virus"@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/OBI_0100026> <http://purl.obolibrary.org/obo/IAO_0000122>)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/OBI_0100026> "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs."@en)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/OBI_0100026> "10/21/09: This is a placeholder term, that should ideally be imported from the NCBI taxonomy, but the high level hierarchy there does not suit our needs (includes plasmids and 'other organisms')"^^xsd:string)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/OBI_0100026> "13-02-2009:
+OBI doesn't take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.
+This issue is outside the scope of OBI."^^xsd:string)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/OBI_0100026> "GROUP: OBI Biomaterial Branch"^^xsd:string)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OBI_0100026> "WEB: http://en.wikipedia.org/wiki/Organism"@en)
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0100026> <http://purl.obolibrary.org/obo/obi.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0100026> "organism"@en)
+SubClassOf(<http://purl.obolibrary.org/obo/OBI_0100026> <http://purl.obolibrary.org/obo/BFO_0000030>)
 
 # Class: <http://purl.obolibrary.org/obo/OBI_0100051> (specimen)
 
