@@ -15,11 +15,12 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/labo.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/2020-02-06/labo.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/labo/2021-06-08/labo.owl"/>
         <dc:creator>Adrien Barton</dc:creator>
         <dc:creator>Jean-François Ethier</dc:creator>
         <dc:creator>Paul Fabry</dc:creator>
         <rdfs:comment xml:lang="en">An ontology of laboratory test specifications - base version, no import.</rdfs:comment>
+        <owl:versionInfo>2021-06-08</owl:versionInfo>
     </owl:Ontology>
     
 

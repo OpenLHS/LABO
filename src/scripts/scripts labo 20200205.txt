@@ -14,7 +14,7 @@ robot extract --method BOT --input "C:\Depot_GitLab\ontologies\PDRO\src\pdro.owl
 
 	- OBI import
 	
-robot extract --method BOT --input "TARGET_FOLDER\obi\src\ontology\obi-edit.owl" --term-file obi_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\obi_for_labo.owl
+robot extract --method BOT --input "C:\Sources ontologies\obi\views\obi-base.owl"  --term-file obi_import_for_labo.txt --copy-ontology-annotations true --annotate-with-source true --individuals exclude --imports exclude convert --format ofn --output ..\imports\obi-for-labo.owl
 
 	- OGMS import
 	
@@ -30,4 +30,4 @@ robot extract --method BOT --input "TARGET_FOLDER\omiabis-dev\BFO2 omiabis\omiab
 
 	- LABO merge
 
-robot merge --input ..\labo.owl --output ..\..\merged\labo-merged.owl
+robot merge --input ..\labo.owl --output ..\..\labo-merged.owl
