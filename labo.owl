@@ -18,6 +18,8 @@
         <dc:creator>Adrien Barton</dc:creator>
         <dc:creator>Jean-François Ethier</dc:creator>
         <dc:creator>Paul Fabry</dc:creator>
+        <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
+        <terms:title>clinical LABoratory test Ontology</terms:title>
         <rdfs:comment xml:lang="en">An ontology of laboratory test specifications - full version, imports merged.</rdfs:comment>
     </owl:Ontology>
     
