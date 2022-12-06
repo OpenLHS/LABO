@@ -21,6 +21,7 @@
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title>clinical LABoratory test Ontology</terms:title>
         <rdfs:comment xml:lang="en">An ontology of laboratory test specifications - full version, imports merged.</rdfs:comment>
+        <owl:versionInfo>2021-06-08</owl:versionInfo>
     </owl:Ontology>
     
 
